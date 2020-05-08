@@ -420,6 +420,9 @@ export default class DataManager {
   }
 
   getFieldValue = (rowData, columnDef, lookup = true) => {
+    console.log('This is gordo, sup!');
+    console.log('columnDef', columnDef);
+    console.log('rowData', rowData);
     let value = (typeof rowData[columnDef.field] !== 'undefined' ? rowData[columnDef.field] : byString(rowData, columnDef.field));
     if (columnDef.lookup && lookup) {
       value = columnDef.lookup[value];
